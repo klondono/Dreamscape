@@ -23,5 +23,11 @@ namespace Dreamscape.Models
 
         public int CreatedBy { get; set; }
 
+        public string FullName { get {
+
+                return FirstName + " " + LastName;
+            } 
+        }
+
     }
 }

@@ -1,15 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using Dreamscape.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 
 namespace Dreamscape.Controllers
 {
     public class CustomerController : Controller
     {
+        private readonly IConfiguration _configuration;
+
+        public CustomerController(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
         // GET: CustomerController
         public ActionResult Index()
         {
